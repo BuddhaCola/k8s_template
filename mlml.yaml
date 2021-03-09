@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: ft_nginx
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        - containerPort: 22
+        imagePullPolicy: Never
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: nginx-service
+    labels:
+      run: nginx-service
+  spec:
+    ports:
+    - port: 80
+      name: http
+      protocol: TCP
+    - port: 443
+      name: https
+      protocol: TCP
+    # - Port: 22
+    # name: SSH
+    #   protocol: ???
+    selector:
+      run: nginx-service
