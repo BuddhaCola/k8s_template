@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    configmap.yaml                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wtaylor <wtaylor@student.21-school>        +#+  +:+       +#+         #
+#    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/19 14:52:31 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/19 14:53:25 by wtaylor          ###   ########.fr        #
+#    Created: 2021/03/17 18:54:05 by wtaylor           #+#    #+#              #
+#    Updated: 2021/03/18 22:24:53 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,4 +21,4 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - 192.168.99.100-192.168.1.250
+      - 192.168.99.100-192.168.99.200
