@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 19:25:47 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/18 22:33:54 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/19 14:53:39 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ minikube start --vm-driver=virtualbox  --disk-size="10000mb" --memory="4000mb"
 
 minikube addons enable metallb
 
-kubectl apply -f configmap.yaml
+kubectl apply -f srcs/configmap.yaml
 
 eval $(minikube docker-env)
 
