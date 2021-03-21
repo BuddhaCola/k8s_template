@@ -14,9 +14,9 @@ RUN tar zxvf phpMyAdmin-5.0.2-all-languages.tar.gz
 
 RUN	rm phpMyAdmin-5.0.2-all-languages.tar.gz && mv phpMyAdmin-5.0.2-all-languages phpmyadmin && chmod -R 777 /var/www/phpmyadmin
 
-# RUN openssl req -x509 -nodes -days 1 -newkey rsa:2048\
-# 	-subj "/C=RU/ST=Tatarstan/L=Lololand/O=Totally trusted organization/OU=your mom!"\
-# 	-keyout /etc/ssl/private/ft_server.key -out /etc/ssl/certs/ft_server.crt
+RUN openssl req -x509 -nodes -days 1 -newkey rsa:2048\
+	-subj "/C=RU/ST=Tatarstan/L=Lololand/O=Totally trusted organization/OU=your mom!"\
+	-keyout /etc/ssl/private/ft_server.key -out /etc/ssl/certs/ft_server.crt
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 

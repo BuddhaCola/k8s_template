@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 21:53:31 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/20 13:35:16 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/21 17:26:32 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: php
-        image: php-img
+        image: phpmyadmin
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
@@ -35,8 +35,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: php
-  # annotations:
-  #  metallb.universe.tf/allow-shared-ip: sharing
+  annotations:
+   metallb.universe.tf/allow-shared-ip: sharing
 spec:
   type: LoadBalancer
   selector:
