@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 19:25:47 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/19 15:12:23 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/21 14:42:39 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,3 +28,7 @@ kubectl apply -f srcs/nginx/nginx.yaml
 docker build -t php-img ./srcs/phpmyadmin
 
 kubectl apply -f srcs/phpmyadmin/php.yaml
+
+#docker build -t wordpress-img srcs/wordpress
+
+#kubectl apply -f srcs/wordpress/wordpress.yaml
