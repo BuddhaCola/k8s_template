@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 19:25:47 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/22 15:18:23 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/28 16:42:43 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ minikube start --vm-driver=virtualbox  --disk-size="10000mb" --memory="4000mb"
 minikube addons enable metallb
 
 eval $(minikube docker-env)
+#eval $(minikube docker-env --unset)
 
 docker login
 

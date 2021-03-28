@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/19 20:49:56 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/22 15:10:42 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/28 20:17:04 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,4 +18,7 @@ COPY ./setup.sh .
 
 COPY ./sql_init .
 
-ENTRYPOINT [ "sh", "setup.sh" ]
+RUN chmod +x ./setup.sh
+# RUN sh ./setup.sh
+
+ENTRYPOINT [ "sh", "./setup.sh" ]

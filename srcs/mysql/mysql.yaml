@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 15:17:31 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/22 20:51:55 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/28 00:05:19 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ spec:
       - name: wp-db
         persistentVolumeClaim:
           claimName: wpbd-pv-claim
-
       containers:
       - name: mysql
         image: mysql-img
