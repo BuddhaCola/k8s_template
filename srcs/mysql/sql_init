@@ -6,11 +6,11 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 13:58:29 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/22 14:01:20 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/03/29 21:15:38 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CREATE DATABASE wordpress;
-GRANT ALL ON wordpress.* TO 'admin'@'localhost' IDENTIFIED BY 'qwerty' WITH GRANT OPTION;
+GRANT ALL ON wordpress.* TO 'admin'@'%' IDENTIFIED BY 'qwerty' WITH GRANT OPTION;
 CREATE DATABASE phpmyadmin;
-GRANT ALL ON phpmyadmin.* TO 'admin'@'localhost' IDENTIFIED BY 'qwerty' WITH GRANT OPTION;
+GRANT ALL ON phpmyadmin.* TO 'admin'@'%' IDENTIFIED BY 'qwerty' WITH GRANT OPTION;
