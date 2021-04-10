@@ -6,16 +6,18 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/21 19:41:00 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/29 21:04:13 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/09 19:30:33 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!bin/sh
 openrc default
 
-# touch /run/openrc/softlevel
+touch /run/openrc/softlevel
 
 /etc/init.d/mariadb setup
+
+# cp ./my.cnf /etc/
 
 openrc -s mariadb start
 

@@ -6,18 +6,18 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 20:38:33 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/22 20:47:08 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/10 15:00:53 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: wp-db
+  name: test-db
   labels:
     type: local
 spec:
-  # storageClassName: manual
+  storageClassName: manual
   capacity:
     storage: 100Mi
   accessModes:
@@ -28,9 +28,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: wpbd-pv-claim
+  name: test-pv-claim
 spec:
-  # storageClassName: manual
+  storageClassName: manual
+  volumeName: test-db
   accessModes:
     - ReadWriteOnce
   resources:

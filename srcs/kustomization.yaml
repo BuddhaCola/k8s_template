@@ -1,0 +1,6 @@
+resources:
+  - nginx/nginx.yaml 
+  - phpmyadmin/php.yaml
+  - wordpress/wordpress.yaml
+  - mysql/mysql.yaml
+  - configmap.yaml

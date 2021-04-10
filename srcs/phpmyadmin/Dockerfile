@@ -20,4 +20,6 @@ RUN openssl req -x509 -nodes -days 1 -newkey rsa:2048\
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 
+COPY ./config.inc.php ./phpmyadmin
+
 CMD php-fpm7 && nginx -g 'daemon off;'

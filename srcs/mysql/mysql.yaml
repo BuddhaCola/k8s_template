@@ -6,10 +6,38 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 15:17:31 by wtaylor           #+#    #+#              #
-#    Updated: 2021/03/28 00:05:19 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/10 15:03:07 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: db-pv-claim
+spec:
+  storageClassName: manual
+  volumeName: db-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,7 +55,7 @@ spec:
       volumes:
       - name: wp-db
         persistentVolumeClaim:
-          claimName: wpbd-pv-claim
+          claimName: db-pv-claim
       containers:
       - name: mysql
         image: mysql-img
@@ -35,7 +63,7 @@ spec:
         ports:
         - containerPort: 3306
         volumeMounts:
-        - mountPath: "/wpdb"
+        - mountPath: "/var/lib/mysql/"
           name: wp-db
 ---
 apiVersion: v1
@@ -45,16 +73,11 @@ metadata:
   annotations:
    metallb.universe.tf/allow-shared-ip: sharing
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: mysql
-  loadBalancerIP: 192.168.99.100
   ports:
-    # - name: http
-    #   protocol: TCP
-    #   port: 80
-    #   targetPort: 80
-    - name: ptth
+    - name: mysql-port
       protocol: TCP
       port: 3306
       targetPort: 3306
