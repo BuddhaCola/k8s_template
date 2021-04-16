@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 13:27:48 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/09 13:44:27 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/16 16:11:56 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,9 @@ RUN	wget https://wordpress.org/latest.tar.gz && tar -xf latest.tar.gz && rm late
 
 COPY ./wp-config.php ./wordpress
 
-RUN openssl req -x509 -nodes -days 1 -newkey rsa:2048\
-	-subj "/C=RU/ST=Tatarstan/L=Lololand/O=Totally trusted organization/OU=your mom!"\
-	-keyout /etc/ssl/private/ft_server.key -out /etc/ssl/certs/ft_server.crt
+# RUN openssl req -x509 -nodes -days 1 -newkey rsa:2048\
+# 	-subj "/C=RU/ST=Tatarstan/L=Lololand/O=Totally trusted organization/OU=your mom!"\
+# 	-keyout /etc/ssl/private/ft_server.key -out /etc/ssl/certs/ft_server.crt
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 

@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/21 19:41:00 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/13 14:24:43 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/16 23:27:13 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,10 @@ openrc -s mariadb start
 
 mysql < sql_init && rm sql_init
 
+# mysql < mysql.sql && rm mysql.sql
+
 openrc -s mariadb stop
 
 /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+# rm setup.sh
+# openrc -s /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
