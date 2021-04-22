@@ -5,23 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/21 20:22:15 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/22 23:48:31 by wtaylor          ###   ########.fr        #
+#    Created: 2021/04/23 00:30:26 by wtaylor           #+#    #+#              #
+#    Updated: 2021/04/23 00:51:18 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM		alpine:3.12
+FROM	alpine:3.12
 
-RUN			apk update && apk add libc6-compat
+RUN		apk update && apk add vsftpd openssl
 
-WORKDIR		/etc/grafana/
+RUN		openssl req -x509 -nodes -days 1 -newkey rsa:2048 \
+		-subj "/C=RU/ST=Tatarstan/L=Lololand/O=Totally trusted organization/OU=your mom!" \
+		-keyout /etc/ssl/private/ft_services.key -out /etc/ssl/certs/ft_services.crt
 
-RUN			wget https://dl.grafana.com/oss/release/grafana-7.5.4.linux-amd64.tar.gz &&\
-			tar -zxvf grafana-7.5.4.linux-amd64.tar.gz --strip-components 1 && \
-			rm grafana-7.5.4.linux-amd64.tar.gz
+RUN		echo 'root:root' | chpasswd
 
-COPY		entrypoint.sh	.
-
-COPY		grafana.db		/etc/grafana/data/
-
-CMD	[ "./bin/grafana-server" ]
+CMD		vsftpd

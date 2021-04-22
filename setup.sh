@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 19:25:47 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/22 21:02:03 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/23 00:31:29 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,5 +25,6 @@ docker build -t wordpress-img	srcs/wordpress
 docker build -t mysql-img		srcs/mysql
 docker build -t grafana-img		srcs/grafana
 docker build -t influxdb-img	srcs/influxdb
+docker build -t ftps-img		srcs/ftps
 
 kubectl apply -k srcs
