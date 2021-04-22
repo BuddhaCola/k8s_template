@@ -5,19 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/19 20:49:56 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/21 19:18:23 by wtaylor          ###   ########.fr        #
+#    Created: 2021/04/21 20:22:15 by wtaylor           #+#    #+#              #
+#    Updated: 2021/04/22 13:22:05 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine:3.12
+FROM		alpine:3.12
 
-RUN apk update && apk add mysql mysql-client openrc
+RUN			apk update && apk add libc6-compat
 
-COPY ./setup.sh .
+WORKDIR		/etc/grafana/
 
-COPY ./Wordpress.sql .
+RUN			wget https://dl.grafana.com/oss/release/grafana-7.5.4.linux-amd64.tar.gz &&\
+			tar -zxvf grafana-7.5.4.linux-amd64.tar.gz --strip-components 1 && \
+			rm grafana-7.5.4.linux-amd64.tar.gz
 
-RUN chmod +x ./setup.sh
+COPY		entrypoint.sh .
 
-ENTRYPOINT [ "sh", "./setup.sh" ]
+CMD	[ "./bin/grafana-server" ]

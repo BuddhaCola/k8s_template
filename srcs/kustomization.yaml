@@ -3,4 +3,6 @@ resources:
   - phpmyadmin/php.yaml
   - wordpress/wordpress.yaml
   - mysql/mysql.yaml
+  - grafana/grafana.yaml
+  - influxdb/influxdb.yaml
   - configmap.yaml

@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 18:52:16 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/16 20:09:17 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/22 23:41:08 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,16 @@ RUN apk update && apk add nginx openssl
 
 COPY default.conf /etc/nginx/conf.d/
 
-COPY setup.sh .
+COPY generate_ssl.sh .
+
+COPY telegraf.conf /etc/telegraf/
+
+COPY index.html /var/www/
 
 RUN mkdir /run/nginx/
 
-RUN sh setup.sh
+RUN sh ./generate_ssl.sh
 
 CMD nginx -g 'daemon off;'
+
+kubectl cp grafana-deployment-c554596b5-cw8xv:/etc/grafana/data/grafana.db grafana.db

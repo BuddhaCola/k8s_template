@@ -6,14 +6,14 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 15:17:31 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/13 14:40:46 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/22 12:07:31 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: db-pv
+  name: wp-database
   labels:
     type: local
 spec:
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: db-pv-claim
+  name: wp-database-pvc
 spec:
   storageClassName: manual
-  volumeName: db-pv
+  volumeName: wp-database
   accessModes:
     - ReadWriteOnce
   resources:
@@ -41,7 +41,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+  name: mysql-deployment
 spec:
   selector:
     matchLabels:
@@ -55,7 +55,7 @@ spec:
       volumes:
       - name: wp-db
         persistentVolumeClaim:
-          claimName: db-pv-claim
+          claimName: wp-database-pvc
       containers:
       - name: mysql
         image: mysql-img

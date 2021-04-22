@@ -1,3 +1,7 @@
+CREATE DATABASE wordpress;
+GRANT ALL ON wordpress.* TO 'admin'@'%' IDENTIFIED BY 'qwerty' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
