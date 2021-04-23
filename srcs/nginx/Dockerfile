@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/17 18:52:16 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/22 23:41:08 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/23 12:18:35 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,5 +27,3 @@ RUN mkdir /run/nginx/
 RUN sh ./generate_ssl.sh
 
 CMD nginx -g 'daemon off;'
-
-kubectl cp grafana-deployment-c554596b5-cw8xv:/etc/grafana/data/grafana.db grafana.db

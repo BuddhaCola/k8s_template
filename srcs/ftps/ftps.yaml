@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 00:33:00 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/23 00:34:05 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/23 14:21:56 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,3 +47,7 @@ spec:
       protocol: TCP
       port: 21
       targetPort: 21
+    - name: passv-port
+      protocol: TCP
+      port: 10050
+      targetPort: 10050
