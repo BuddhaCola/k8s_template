@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 20:22:15 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/22 23:48:31 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/23 16:24:14 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,4 +24,4 @@ COPY		entrypoint.sh	.
 
 COPY		grafana.db		/etc/grafana/data/
 
-CMD	[ "./bin/grafana-server" ]
+CMD			./bin/grafana-server
