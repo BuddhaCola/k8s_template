@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/22 15:17:31 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/22 12:07:31 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/24 21:10:19 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-deployment
+  name: mysql
 spec:
   selector:
     matchLabels:

@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 11:53:08 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/23 11:53:10 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/24 00:59:56 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: influxdb-deployment
+  name: influxdb
 spec:
   selector:
     matchLabels:
@@ -66,7 +66,7 @@ spec:
         ports:
         - containerPort: 8086
         volumeMounts:
-        - mountPath: "/var/lib/influxdb"
+        - mountPath: "/root/.influxdb/"
           name: influxdb
         - name: dockersock
           mountPath: /var/run/docker.sock

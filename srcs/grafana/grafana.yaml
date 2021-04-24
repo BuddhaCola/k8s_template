@@ -6,14 +6,14 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/21 20:55:05 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/21 20:56:55 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/24 00:59:56 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grafana-deployment
+  name: grafana
 spec:
   selector:
     matchLabels:

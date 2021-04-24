@@ -6,7 +6,7 @@
 #    By: wtaylor <wtaylor@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/19 20:49:56 by wtaylor           #+#    #+#              #
-#    Updated: 2021/04/21 19:18:23 by wtaylor          ###   ########.fr        #
+#    Updated: 2021/04/24 00:58:50 by wtaylor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,4 +20,4 @@ COPY ./Wordpress.sql .
 
 RUN chmod +x ./setup.sh
 
-ENTRYPOINT [ "sh", "./setup.sh" ]
+CMD sh ./setup.sh
