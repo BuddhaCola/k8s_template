@@ -7,10 +7,11 @@ As a bonus, there's a ftps server.\
 Every container is based on Alpine Linux, the most minimalistic Linux distribution so you got to figure out a way to make things work that are usually built-in any vanilla Linux.\
 \
 **Requirements**
-[Docker Desctop](https://www.docker.com/products/docker-desktop) installaed
-[Kubernetes](https://kubernetes.io/releases/download/) installaed
-[Kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) installaed
-[Minikube](https://minikube.sigs.k8s.io/docs/start/) installaed
+[Docker Desctop](https://www.docker.com/products/docker-desktop) installaed\
+[Kubernetes](https://kubernetes.io/releases/download/) installaed\
+[Kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) installaed\
+[Minikube](https://minikube.sigs.k8s.io/docs/start/) installaed\
+\
 \
 **Usage**
 Git clone the repository by entering\
