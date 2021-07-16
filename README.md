@@ -12,7 +12,6 @@ Every container is based on Alpine Linux, the most minimalistic Linux distributi
 [Kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) installaed\
 [Minikube](https://minikube.sigs.k8s.io/docs/start/) installaed\
 \
-\
 **Usage**
 Git clone the repository by entering\
 $ git clone https://github.com/BuddhaCola/wtf_service.git \
