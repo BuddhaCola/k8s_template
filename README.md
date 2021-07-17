@@ -1,5 +1,5 @@
 # wtf_service
-**Kubernetes administration project**\
+**42 administration project**\
 A whole Kubernetes cluster that is running inside [Minukube](https://minikube.sigs.k8s.io/docs/) virtual machine with my own Docker images, YAML files and config files for every service included.\
 It consists of Docker conteiners for every service, including Wordpress site working in NGINX-driven server, MariaDB database and Phpmyadmin to manage the thing.\
 Also there's [Grafana](https://grafana.com/grafana/) visual dashboard service, showing metrics collected from every container by [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) agent into [InfluxDB](https://www.influxdata.com/products/influxdb/) database and showing CPU and memory load from every of them.\
