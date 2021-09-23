@@ -13,14 +13,22 @@ Every container is based on Alpine Linux, the most minimalistic Linux distributi
 [Minikube](https://minikube.sigs.k8s.io/docs/start/) installaed\
 \
 **Usage**\
-Git clone the repository by entering\
-$ git clone https://github.com/BuddhaCola/wtf_service.git \
-cd into it\
-$ cd wtf_service\
-Run setup.sh script by entering\
-$ bash setup.sh\
-After Minikube started the cluster and Docker made all the containers you can open Dashboard by typing into console\
-$ minikube dashboard\
+Git clone the repository by entering
+```
+git clone https://github.com/BuddhaCola/wtf_service.git
+```
+cd into it
+```
+cd wtf_service
+```
+Run setup.sh script by entering
+```
+bash setup.sh
+```
+After Minikube started the cluster and Docker made all the containers you can open Dashboard by typing into console
+```
+minikube dashboard
+```
 If all done right, you should be able to open main page by opening http://192.168.99.100/ in your browser\
 \
 \
