@@ -22,3 +22,6 @@ $ bash setup.sh\
 After Minikube started the cluster and Docker made all the containers you can open Dashboard by typing into console\
 $ minikube dashboard\
 If all done right, you should be able to open main page by opening http://192.168.99.100/ in your browser\
+\
+\
+<img width="1203" alt="Screenshot 2021-09-23 at 13 33 54" src="https://user-images.githubusercontent.com/63592194/134493702-a4b39b57-bff8-49d0-82d8-3b8a8ead5c03.png">
