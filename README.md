@@ -11,6 +11,7 @@ Includes containers for
 - Phpmyadmin
 - ftps server
 \
+\
 **Requirements**\
 [Docker Desktop](https://www.docker.com/products/docker-desktop) installaed\
 [Kubernetes](https://kubernetes.io/releases/download/) installaed\
