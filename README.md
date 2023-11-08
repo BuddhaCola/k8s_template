@@ -1,10 +1,15 @@
-# wtf_service
-**42 administration project**\
-A whole Kubernetes cluster that is running inside [Minukube](https://minikube.sigs.k8s.io/docs/) virtual machine with my own Docker images, YAML files and config files for every service included.\
-It consists of Docker conteiners for every service, including Wordpress site working in NGINX-driven server, MariaDB database and Phpmyadmin to manage the thing.\
-Also there's [Grafana](https://grafana.com/grafana/) visual dashboard service, showing metrics collected from every container by [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/) agent into [InfluxDB](https://www.influxdata.com/products/influxdb/) database and showing CPU and memory load from every of them.\
-As a bonus, there's a ftps server.\
-Every container is based on Alpine Linux, the most minimalistic Linux distribution so you got to figure out a way to make things work that are usually built-in any vanilla Linux.\
+##### Kubernetes cluster template for hosting a WordPress application.
+
+For local run, can be launched inside VirtualBox using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+
+Includes containers for
+- [Wordpress](https://wordpress.org/)
+- [Nginx](https://www.nginx.com/)
+- Database (default MySQL)
+- [Grafana](https://grafana.com/)
+- [InfluxDB](https://www.influxdata.com/) (for Grafana)
+- Phpmyadmin
+- ftps server
 \
 **Requirements**\
 [Docker Desktop](https://www.docker.com/products/docker-desktop) installaed\
