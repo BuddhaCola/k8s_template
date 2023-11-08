@@ -1,4 +1,4 @@
-##### Kubernetes cluster template for hosting a WordPress application.
+##### Instant-cooking Kubernetes cluster template for hosting a WordPress application
 
 For local run, can be launched inside VirtualBox using [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
