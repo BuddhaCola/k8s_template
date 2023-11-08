@@ -30,7 +30,7 @@ Run setup.sh script by entering
 ```
 bash setup.sh
 ```
-After Minikube started the cluster and Docker made all the containers you can open Dashboard by typing into console
+After Minikube started the cluster and Docker finished building containers you can open Dashboard by typing into console
 ```
 minikube dashboard
 ```
